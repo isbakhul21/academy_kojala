@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+
+    <!--[ini adalah action, fungisnya untuk menjembatani antara models dan views]-->
+    <record id="action_female_student" model="ir.actions.act_window">
+            <field name="name">Female Student"</field>
+            <field name="res_model">academy.student</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'default_gender':'female','default_age': 20}</field>
+            <field name="domain">['|',('gender','=','female'),('age','=','20')]</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smilling_face">
+                    Tidak ada, datanya, Please Masukin datanya DONG BANG !!!
+                </p>
+            </field>
+    </record>
+
+</odoo>
