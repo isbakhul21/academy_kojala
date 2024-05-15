@@ -31,8 +31,17 @@ class ThesisGuidance(models.Model):
     @api.onchange('student_id')
     def onchange_student_id(self):
         self.nim = self.student_id.nim
-        
 
+
+    def action_test(self):
+        print("BUTTON INI DI KLIK BROOOOHHHH!!!!")
+        return {
+            'effect': {
+                'fadeout': 'fast',
+                'message': 'HOREEEEE BUTTTON NYA DI CLICK, KAMU KEREN !',
+                'type': 'rainbow_man',
+            }
+        }
 
 
 

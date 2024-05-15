@@ -7,10 +7,23 @@
             <field name="name">thesis.guidance.tree</field>
             <field name="model">thesis.guidance</field>
             <field name="arch" type="xml">
-                <tree create="1" delete="0" duplicate="0">
+                <tree decoration-info="state == 'draft'"
+                    decoration-success="state == 'consultation'"
+                    decoration-danger="state == 'test_thesis'"
+                    decoration-warning="state == 'proposal'"
+                    decoration-primary="state == 'graduate'">
+
                     <field name="student_id" />
                     <field name="guidance_date" />
                     <field name="accept_date" />
+                    <field name="activity_ids" widget="list_activity" />
+                    <field name="state"
+                           decoration-info="state == 'draft'"
+                           decoration-success="state == 'consultation'"
+                           decoration-danger="state == 'test_thesis'"
+                           decoration-warning="state == 'proposal'"
+                           decoration-primary="state == 'graduate'"
+                           widget="badge" />
                 </tree>
             </field>
         </record>
@@ -32,16 +45,17 @@
                         </div>
                         <group>
                             <group>
-                                <field name="student_id" />
+                                <field name="student_id" help="Field ini berisi nama nama mahasiswa di universitas kojala" />
                                 <field name="nim" />
                                 <field name="guidance_date" />
                                 <field name="accept_date" />
                             </group>
                             <group>
                                 <field name="gender" />
+                                <button name="action_test" string="CONFIRM STUDENT" confirm="DATANYA UDAH BENER BELUM CUYYY ??" help="TOMBOL INI AKAN PRINT HELLO DI TERMINAL !!!" type="object" class="oe_highlight"/>
+                                <button name="%(academy_kojala.action_thesis_guidance)d" string="CONFIRM ACTION" confirm="YAKIN UDAH BENERRR MASSS ?????" type="action" class="oe_highlight"/>
                             </group>
                         </group>
-
                         <notebook>
                             <page string="Subject Lecturer">
                                 <group>
@@ -57,6 +71,13 @@
                         </notebook>
 
                     </sheet>
+
+                    <!--Ini adalah chatter-->
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" groups="base.group_user"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                </div>
 
                 </form>
             </field>
