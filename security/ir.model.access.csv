@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 academy_kojala.access_academy_student,access_academy_student,academy_kojala.model_academy_student,base.group_user,1,1,1,1
 academy_kojala.access_thesis_guidance,access_thesis_guidance,academy_kojala.model_thesis_guidance,base.group_user,1,1,1,1
+academy_kojala.access_thesis_guidance_line,access_thesis_guidance_line,academy_kojala.model_thesis_guidance_line,base.group_user,1,1,1,1
+academy_kojala.access_hewan_orm,access_hewan_orm,academy_kojala.model_hewan_orm,base.group_user,1,1,1,1

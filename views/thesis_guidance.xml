@@ -70,8 +70,12 @@
                         </group>
                         <notebook>
                             <page string="Subject Lecturer">
-                                <group>
-                                </group>
+                               <field name="thesis_guidance_line_ids">
+                                   <tree editable="bottom">
+                                       <field name="subject"/>
+                                       <field name="lecturer"/>
+                                   </tree>
+                               </field>
                             </page>
                             <page string="Practice">
                                 <group>
