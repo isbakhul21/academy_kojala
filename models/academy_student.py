@@ -25,6 +25,7 @@ class AcademyStudent(models.Model):
     age = fields.Integer(string="Age",compute=_compute_age,store=True)
     gender = fields.Selection([('male','Male'),('female','Female')], default='male')
     active = fields.Boolean(string="Active", default=True)
+    profile_picture_student = fields.Image(string=" Foto Profil MAHASISWA")
 
     partner_id = fields.Many2one("res.partner", string="Friend")
     thesis_guidance_id = fields.Many2one("thesis.guidance", string="Thesis")

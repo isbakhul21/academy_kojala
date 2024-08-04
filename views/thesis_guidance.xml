@@ -54,6 +54,7 @@
                                 <field name="guidance_date" />
                                 <field name="accept_date" />
                                 <field name="lecturer_id" widget="many2one_avatar" />
+                                <field name="hide_price_subject" widget="boolean_toggle" groups="base.group_no_one"/>
                             </group>
                             <group>
                                 <field name="gender" />
@@ -74,6 +75,7 @@
                                    <tree editable="bottom">
                                        <field name="subject"/>
                                        <field name="lecturer"/>
+                                       <field name="price_subject"/>
                                    </tree>
                                </field>
                             </page>

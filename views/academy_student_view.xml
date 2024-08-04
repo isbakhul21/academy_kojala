@@ -25,6 +25,7 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <field name="profile_picture_student" widget="image" class="oe_avatar"/>
                     <group>
                         <group>
                             <field name="nim" />

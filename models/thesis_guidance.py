@@ -18,14 +18,11 @@ class ThesisGuidance(models.Model):
 
     # LineGuidance
     thesis_guidance_line_ids = fields.One2many('thesis.guidance.line','thesis_guidance_id',string="Thesis Guidance Line")
-
-
     priority = fields.Selection([
         ('0','Lazy'),
         ('1','Normal'),
         ('2','Smart'),
         ('3','Very Smart')], string="Priority")
-
     state = fields.Selection([
         ('draft', 'Draft'),
         ('consultation', 'In Consultation'),
@@ -37,6 +34,7 @@ class ThesisGuidance(models.Model):
     gender = fields.Selection(related='student_id.gender')
     nim = fields.Integer(string="NIM",tracking=True)
     lecturer_id = fields.Many2one('res.users', string="Lecture")
+    hide_price_subject = fields.Boolean(string="Sembunyikan Biaya Mata Kuliah ?")
 
     @api.onchange('student_id')
     def onchange_student_id(self):
@@ -78,6 +76,7 @@ class ThesisGuidanceLine(models.Model):
 
     subject = fields.Char(string="Mata Kuliah")
     lecturer = fields.Char(string="Dosen")
+    price_subject = fields.Float(string="BIAYA MATA KULIAH")
 
 
 
